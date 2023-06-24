@@ -1,0 +1,64 @@
+<div class="container" *ngIf="rates">
+  <!-- title -->
+  <p class="title">Currency Converter</p>
+  <!-- title -->
+  <!-- enter amount subtitle -->
+  <div class="enter__amount">
+    <p>Enter Amount</p>
+  </div>
+  <!-- enter amount subtitle -->
+  <div class="values__container">
+    <!-- input amount section -->
+    <div class="input__container">
+      <input type="number" placeholder="amount" [(ngModel)]="amount" (input)="limitInputLength($event)" style="text-align: left; padding-left: 10px;"/>
+    </div>
+    <!-- input amount section -->
+
+    <!-- main content section/container -->
+    <div class="select__container">
+      <!-- first value input form -->
+      <div class="from text">
+        <p>From</p>
+        <div class="value_area">
+          <img class="flag" [src]="getFlagImageUrl1(from)">
+          <!-- first selector -->
+          <select class="drop-menu" [(ngModel)]="from" (change)="loadRates()">
+            <option *ngFor="let c of getAllCurrencies()" [value]="c">{{c}}</option>
+          </select>
+          <!-- first selector -->
+        </div>
+      </div>
+      <!-- first value input group -->
+
+      <!-- the exchange icon/button to swapCurrencies -->
+      <div class="swapCurrencies__icon" (click)="swapCurrencies()"><i class="fas fa-exchange-alt"></i></div>
+      <!-- the exchange icon/button to swapCurrencies -->
+
+      <!-- second value input group -->
+      <div class="to text">
+        <p>To</p>
+        <div class="value_area">
+          <img class="flag" [src]="getFlagImageUrl2(to)">
+          <!-- second selector -->
+          <select class="drop-menu" [(ngModel)]="to" (change)="loadRates()">
+            <option *ngFor="let c of getAllCurrencies()" [value]="c">{{c}}</option>
+          </select>
+          <!-- second selector -->
+        </div>
+      </div>
+      <!-- second value input group -->
+    </div>
+    <!-- main content section/container -->
+
+  </div>
+  <!-- result -->
+  <p class="result" [style.color]="amount < 0 ? 'red' : ''">{{amount.toFixed(2)}} {{from}} = {{convert().toFixed(2)}} {{to}}</p>
+  <!-- result -->
+  <!-- extra section about why euro flag is kinda weird :) -->
+    <div class="info">
+      <p class="click" (click)="toggleInfo()"><></p>
+      <div class="hidden" *ngIf="showInfo">sorry, the euro flag api was unavailable<br>so I replaced it with a similar one :)</div>
+    </div>
+  <!-- extra section about why euro flag is kinda weird :) -->
+</div>
+

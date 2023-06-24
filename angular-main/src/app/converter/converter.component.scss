@@ -1,0 +1,139 @@
+// some scary stuff 
+* {
+  margin: 0;
+  padding: 0;
+}
+:host {
+  text-align: center;
+}
+::-webkit-inner-spin-button {
+  display: none; // it makes this weird arrows in "Enter Amount" input area magically disappear :)
+}
+// here are some basic styles
+.title {
+  padding-top: 50px;
+  margin-bottom: 70px;
+
+  font-size: 40px;
+}
+// container with cool 3d shadows
+.container {
+  max-width: 500px;
+  max-height: 700px;
+
+  height: 615px;
+
+  margin: 0 auto;
+  padding: 0 15px;
+  margin-top: 100px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background-color: white;
+}
+// result section | font styles
+.result {
+  margin: 20px;
+
+  font-size: 30px;
+  font-family: 'Poppins', sans-serif;
+
+  color: black;
+}
+
+
+
+// little improves for the exchange swapCurrencies button
+.swapCurrencies__icon { 
+  width: 24px;
+  height: 24px;
+  
+  cursor: pointer;
+}
+// flag icons size
+.flag {
+  max-width: 25px;
+}
+//big container stuff
+.values__container { 
+  align-items: center;
+  justify-content: center;
+}
+// extraordinary way to style it
+.values__container :where(input, select) {
+  outline: none;
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+//this part exists 'cause when I've tried to set border not none on input below it won't work :/
+.values__container :where(select) {
+  border: none;
+}
+// some styles for "Enter Amount" input
+.values__container input {
+  height: 50px;
+  font-size: 17px;
+  padding: 0 15px;
+  border: 1px solid #999;
+  margin-bottom: 20px;
+}
+// and some more
+.enter__amount {
+  font-size: 20px;
+  margin-bottom: 5px;
+  margin-left: -235px;
+}
+// It applies a cool border effect on "Enter Amount" during this area is active
+.values__container input:focus { // focus means this styles will apply once you'll use this area
+  padding: 0 14px;
+  border: 2px solid #675AFE;
+  text-align: left;
+}
+//main content container styles 
+.select__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 350px;
+}
+// I used one class for both selectors, they are identical anyway
+.value_area {
+  display: flex;
+  margin-bottom: 40px;
+  height: 45px;
+  width: 115px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #999;
+  border-radius: 10px;
+}
+// those are for text 
+.to {
+  font-size: 20px;
+  text-align: left;
+}
+// and this one also for text
+.from {
+  font-size: 20px;
+  text-align: left;
+}
+
+input {
+  width: 340px;
+}
+select {
+  width: auto;
+  cursor: pointer;
+}
+
+// extra info section <>
+.click {
+  cursor: pointer;
+}
+// 
