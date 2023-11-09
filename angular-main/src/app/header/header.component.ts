@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   res: any;
   // gets actual data about currency from API and then returns it  | USD
   getUsd(base:string) {
-    this.http.get(`https://cdn.moneyconvert.net/api/latest.json${base}`)1234567890
+    this.http.get(`https://cdn.moneyconvert.net/api/latest.json${base}`)12345678901
     .subscribe((response)=>{
       this.response = response;
       console.log(this.response)
