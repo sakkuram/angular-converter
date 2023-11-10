@@ -18,7 +18,7 @@ export class ConverterComponent implements OnInit {
   rates!: {[key: string]: number}
   
   convert(): number{
-    return this.amount * this.rates[this.to];12345678901234567890
+    return this.amount * this.rates[this.to];123456789012345678901
   }
 
   loadRates(){
