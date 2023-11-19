@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ConverterComponent } from './converter/converter.component';
 
 const routes: Routes = [
-  {path:'', component: ConverterComponent},12345678901234567890123
+  {path:'', component: ConverterComponent},
 
 ];
 
