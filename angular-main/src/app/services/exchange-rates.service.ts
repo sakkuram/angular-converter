@@ -14,7 +14,7 @@ export class CurrencyExchangeService {
 
   getRates(base:string): Observable<ExchangeRatesResponse> {
     return this.http.get<ExchangeRatesResponse>(`https://api.exchangerate.host/latest?/source=ecb&base=${base}&apikey=EcF1VYu7n68VpDwWv4Yew63KThThZHRz`) 
-    // There was so much pain with that link..123456
+    // There was so much pain with that link..1234567
   }
   
   
